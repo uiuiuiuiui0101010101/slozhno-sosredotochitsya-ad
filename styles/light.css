@@ -1,16 +1,71 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --main-text: #ffc2e6;
+  --black-text: #353430;
+  --accent-color: #ff8dcb;
+  --accent-color-buttons: #353430;
+  --text: #353430;
+  --REC: #ffeef6;
+  --back-fon: #fff1f7;
+  --hover-day: #ada4a6;
+  --background-header: url(../images/cover-image-light.png);
 }
 
 .theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+  --main-text: #ffc2e6;
+  --black-text: #353430;
+  --accent-color: #ff8dcb;
+  --accent-color-buttons: #353430;
+  --text: #353430;
+  --REC: #ffeef6;
+  --back-fon: #fff1f7;
+  --hover-day: #ada4a6;
+  --background-header: url(../images/cover-image-light.png);
+}
+
+.theme-light .header__record-decoration {
+  display: none;
+}
+
+.theme-light .header::before,
+.theme-light .footer::before,
+.theme-light .header::after,
+.theme-light .footer::after,
+.theme-light .header__theme-menu-button {
+  --accent: var(--text);
+}
+
+.theme-light .main__section-title,
+.theme-light .title-accent {
+  color: var(--text);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-text: #ffc2e6;
+  --black-text: #353430;
+  --accent-color: #ff8dcb;
+  --accent-color-buttons: #353430;
+  --text: #353430;
+  --REC: #ffeef6;
+  --back-fon: #fff1f7;
+  --hover-day: #ada4a6;
+  --background-header: url(../images/cover-image-light.png);
+  }
+
+  .header__record-decoration {
+    display: none;
+  }
+
+  .header::before,
+  .footer::before,
+  .header::after,
+  .footer::after,
+  .header__theme-menu-button {
+    --accent: var(--text);
+  }
+  
+  .main__section-title,
+  .title-accent {
+    color: var(--text);
+  }
 }

@@ -1,5 +1,467 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+h2,
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: "IBM Plex mono";
+  font-size: 18px;
+  background-color: var(--back-fon);
+  background-attachment: fixed;
+}
+.interactive-element {
+  position: relative;
+  cursor: pointer;
+}
+
+.interactive-element:focus {
+  outline: none;
+}
+
+.margin-bottom {
+  margin: 0 0 10px;
+}
+
+.title-accent {
+  background-color: var(--accent);
+}
+
+.title-bold {
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--text);
+}
+
+a:focus {
+  outline: none;
+  border: 1px solid var(--text);
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: var(--background-header);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-columns: 1fr;
+}
+
+.header__theme-menu {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: min-content 1fr;
+}
+
+.REC {
+  display: flex;
+  position: relative;
+  justify-content: end;
+  gap: 3px;
+  color: var(--REC);
+  font-weight: 400;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  padding-top: var(--padding-end);
+}
+
+.krug {
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--REC);
+  border-right: 1px solid var(--REC);
+}
+
+.REC::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+  top: calc(var(--padding-end) + 6px);
+  width: 11px;
+  height: 11px;
+  border-radius: 9px;
+  background-color: var(--REC);
+  margin-left: 10px;
+}
+
+.card__title-grid-header::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  bottom: var(--padding-end);
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--REC);
+  border-left: 1px solid var(--REC);
+  margin-left: var(--padding-end);
+}
+
+.header__theme-menu-list {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  top: -13px;
+  position: relative;
+  align-self: center;
+  align-items: end;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.header__theme-menu-item {
+  inline-size: 70px;
+  block-size: 26px;
+}
+
+.focus-text-grid {
+  grid-row: 2/3;
+}
+
+.focus-text-grid-header {
+  display: flex;
+  flex-direction: column;
+  line-height: 533%;
+  position: relative;
+}
+
+.card__title-grid-header {
+  align-self: center;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: 0;
+  color: var(--accent-color-buttons);
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.header__theme-menu-button:hover {
+  outline: none;
+  border: 1px solid var(--hover-day);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color-buttons);
+}
+
+.padding010 {
+  padding: 0 var(--padding-end);
+}
+
+.images-container {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: var(--padding-end);
+  margin-top: 32px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.images-container img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.footer-focus {
+  margin: auto;
+  color: var(--main-text);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.footer-focus::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 0; /* var(--padding-end) - 10px*/
+  top: var(--padding-end);
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--REC);
+  border-right: 1px solid var(--REC);
+  margin-right: var(--padding-end);
+}
+
+.footer-focus::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: 0; /* var(--padding-end) - 10px */
+  bottom: var(--padding-end);
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--REC);
+  border-left: 1px solid var(--REC);
+  margin-left: var(--padding-end);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.card01 {
+  margin: var(--margin-contents-top) 0 0 0;
+}
+
+.card2,
+.card3 {
+  margin: 32px 0 0;
+}
+
+.card__title {
+  background-color: var(--accent-color);
+  color: var(--black-text);
+  margin-bottom: 10px;
+  height: min-content;
+  font-weight: 700;
+}
+
+.img-title {
+  background-color: var(--accent-color);
+  color: var(--black-text);
+  height: min-content;
+  font-weight: 700;
+}
+
+.main-text {
+  color: var(--main-text);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  align-self: baseline;
+}
+
+.card__quest {
+  color: var(--accent-color-buttons);
+  margin-bottom: 20px;
+}
+
+.card__text {
+  color: var(--text);
+  margin-bottom: 20px;
+  line-height: 23.4px;
+}
+
+.marg20 {
+  margin-bottom: 20px;
+}
+
+.card__title-regular {
+  font-weight: 400;
+}
+
+@media (width >= 768px) {
+
+  .card2,
+  .card3 {
+    margin: 37px 0 0;
+  }
+
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header__theme-menu,
+  .card__title-grid-header,
+  .card1 .card__title,
+  .card1 .card__text {
+    grid-column: 2/3;
+  }
+
+  .focus-text-grid-header {
+    flex-direction: row;
+    gap: 9.5vw;
+    left: -20px;
+    bottom: -2px;
+  }
+
+  .content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+
+  .card3 {
+    display: grid;
+    grid-template-columns: 17fr 31fr;
+  }
+
+  :root {
+    --padding-end: 20px;
+    --margin-imgs-top: 60px;
+  }
+
+  .card__quest {
+    grid-column: 1/2;
+  }
+
+  .card2 .card__title,
+  .card2 .card__text,
+  .focus-text-grid-header {
+    grid-column: 1/3;
+  }
+
+  .card1 .card__quest {
+    grid-row: 1/4;
+  }
+
+  .images-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content repeat(2, 25%) 40%;
+    margin-top: 60px;
+  }
+
+  .img-title {
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+
+  .picture-1 {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .picture-2 {
+    grid-column: 3/4;
+    grid-row: 2/4;
+  }
+
+  .picture-3 {
+    grid-column: 1/2;
+    grid-row: 3/5;
+  }
+
+  .picture-4 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  .picture-5 {
+    grid-column: 2/4;
+    grid-row: 4/5;
+  }
+
+  .footer {
+    margin-top: 60px;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .main-text {
+    color: var(--main-text);
+    font-size: 155px;
+    text-shadow: 4px 4px 0 var(--accent-color);
+    align-self: baseline;
+  }
+
+  .card2,
+  .card3 {
+    margin: 40px 0 0;
+  }
+
+  .header__theme-menu {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: start;
+  }
+
+  .header__theme-menu-list {
+    justify-self: center;
+    align-self: start;
+    margin-right: calc((100% - 348px) / 2);
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 35px;
+  }
+
+  .card1 {
+    grid-template-columns: 31fr 64fr;
+    column-gap: 20px;
+  }
+
+  .card2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, min-content) 1fr;
+    column-gap: 20px;
+  }
+
+  .card2 .card__quest {
+    grid-row: 1/2;
+  }
+
+  .card2 .card__title1 {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  .card2 .card__text1 {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+
+  .card2 .card__title2 {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+
+  .card2 .card__text2 {
+    grid-row: 3/4;
+    grid-column: 2/3;
+  }
+
+  .card2 .card__title3 {
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
+
+  .card2 .card__text3 {
+    grid-row: 3/4;
+    grid-column: 3/4;
+  }
+
+  .content {
+    gap: 20px;
+  }
+
+  .images-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 24% 29% 39%;
+  }
+
+  .footer {
+    margin-top: 60px;
+  }
+
+  .footer-focus {
+    font-size: 155px;
+  }
 }
